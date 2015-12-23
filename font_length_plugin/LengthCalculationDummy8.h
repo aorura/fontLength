@@ -11,8 +11,6 @@ class LengthCalculationDummy8 : public QObject, public LengthCalculationInterfac
     Q_INTERFACES(LengthCalculationInterface)
 
 public:
-    LengthCalculationDummy8();
-
     /** 
      * \name Attribute: 
      */ 

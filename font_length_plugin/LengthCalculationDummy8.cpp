@@ -1,11 +1,7 @@
+#include <QtGui>
+
 #include "LengthCalculationDummy8.h"
 
-#include <QtPlugin>
-#include <QStringList>
-
-LengthCalculationDummy8::LengthCalculationDummy8()
-{
-}
 
 const QStringList LengthCalculationDummy8::fetchFontFiles() const
 {
@@ -44,7 +40,7 @@ int LengthCalculationDummy8::calculateWidth(QString const & text, QString const 
 	if (resultCode)
 		*resultCode = CalculationOk;
 
-	return maxWidth;
+	return 100;//maxWidth;
 }
 
 Q_EXPORT_PLUGIN2( LengthCalculationDummy8, LengthCalculationDummy8 )

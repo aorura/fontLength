@@ -19,6 +19,7 @@
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>
+#include <QtGui/QLineEdit>
 #include <QtGui/QPlainTextEdit>
 #include <QtGui/QPushButton>
 #include <QtGui/QWidget>
@@ -40,8 +41,10 @@ public:
     QCheckBox *checkBox;
     QPushButton *pushButton;
     QGroupBox *groupBox_3;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout_2;
     QLabel *label_3;
-    QLabel *label_4;
+    QLineEdit *lineEdit;
     QLabel *label_5;
 
     void setupUi(QWidget *FontDialog)
@@ -89,19 +92,31 @@ public:
         checkBox->setGeometry(QRect(200, 120, 81, 21));
         pushButton = new QPushButton(FontDialog);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(150, 330, 75, 23));
+        pushButton->setGeometry(QRect(140, 440, 75, 23));
         groupBox_3 = new QGroupBox(FontDialog);
         groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
-        groupBox_3->setGeometry(QRect(30, 370, 301, 101));
-        label_3 = new QLabel(groupBox_3);
+        groupBox_3->setGeometry(QRect(100, 330, 181, 81));
+        widget = new QWidget(groupBox_3);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        widget->setGeometry(QRect(20, 40, 143, 22));
+        horizontalLayout_2 = new QHBoxLayout(widget);
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
+        label_3 = new QLabel(widget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(20, 40, 71, 20));
-        label_4 = new QLabel(groupBox_3);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(90, 40, 21, 16));
-        label_5 = new QLabel(groupBox_3);
+
+        horizontalLayout_2->addWidget(label_3);
+
+        lineEdit = new QLineEdit(widget);
+        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+
+        horizontalLayout_2->addWidget(lineEdit);
+
+        label_5 = new QLabel(widget);
         label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setGeometry(QRect(130, 40, 56, 12));
+
+        horizontalLayout_2->addWidget(label_5);
+
         pushButton->raise();
         groupBox_2->raise();
         groupBox->raise();
@@ -127,7 +142,6 @@ public:
         pushButton->setText(QApplication::translate("FontDialog", "Analysis", 0, QApplication::UnicodeUTF8));
         groupBox_3->setTitle(QApplication::translate("FontDialog", "Font Information", 0, QApplication::UnicodeUTF8));
         label_3->setText(QApplication::translate("FontDialog", "Font Width:", 0, QApplication::UnicodeUTF8));
-        label_4->setText(QApplication::translate("FontDialog", "0", 0, QApplication::UnicodeUTF8));
         label_5->setText(QApplication::translate("FontDialog", "Pixel", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 

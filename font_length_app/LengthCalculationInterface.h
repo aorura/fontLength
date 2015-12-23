@@ -96,29 +96,29 @@ public:
 	};
 
 	/**
-		\brief	Optionen für die Meldungsausgabe
+		\postage options for report output
 	*/
 	enum CalculateFontShowMessagesE
 	{
-		CalculateFontShowMessagesAll		= 0, /**< \brief Alle Meldungen ausgeben */
-		CalculateFontShowMessagesNewError	= 1, /**< \brief Nur Meldungen ausgeben, die noch nicht aufgetreten sind, ohne Textbezug */
-		CalculateFontShowMessagesNone		= 2 /**< \brief Keine Meldungen ausgeben */
+		CalculateFontShowMessagesAll		= 0, /**< \Letter spend all messages */
+		CalculateFontShowMessagesNewError	= 1, /**< \letter Output only messages that have not yet occurred, without reference text */
+		CalculateFontShowMessagesNone		= 2 /**< \letter do not print messages */
 	};
 
 	/**
-		\brief	Für welchen Schriftart-Typ ist die Längenberechnung?
+		\letter for which font type is the length calculation?
 	*/
 	enum FontTypeE
 	{
 		FontTypeMin		= 0,
-		FontTypeVector	= FontTypeMin,	/**< \brief Die Längenberechnung ist für Vector-Schriftarten */
-		FontTypeBitmap,					/**< \brief Die Längenberechnung ist für Bitmap-Schriftarten */
+		FontTypeVector	= FontTypeMin,	/**< \The letter length calculation is intended for vector fonts */
+		FontTypeBitmap,					/**< \The letter length calculation is for bitmap fonts */
 		FontTypeMax
 	};
 
 	/**
-		\brief	Mögliche Fehlercodes
-		\attention	Beim Hinzufuegen neuer Fehler-Ids diese Methode errorMessage erweitern
+		\Letter Possible error codes
+		\attention	When adding new error-ids errorMessage extend this method
 	*/
 	enum ErrorE
 	{
@@ -138,25 +138,25 @@ public:
 		\brief	Konstruktor der Klasse LengthCalculationInterface
 		\nsc
 	*/
-	LengthCalculationInterface();
+	LengthCalculationInterface() {};
 
 	/**
 		\brief	Destruktor der Klasse LengthCalculationInterface
 		\nsd
 	*/
-	virtual ~LengthCalculationInterface();
+	virtual ~LengthCalculationInterface() {};
 
 	/**
 		\brief	Initialisiert Resourcen
 				Hier können z.B. weitere Bibliotheken oder Fonts geladen werden.
 	*/
-	virtual void initResources();
+//park	virtual void initResources();
 
 	/**
 		\brief	Gibt belegte Resourcen frei
 				Es können z.B. weitere Bibliotheken freigegeben werden.
 	*/
-	virtual void freeResources();
+//park	virtual void freeResources();
 
 
 	/**
@@ -182,25 +182,25 @@ public:
 		\brief	Gibt die (ausführliche) Beschreibung der Längenberechnung zurück
 		\return	Beschreibung der Längeberechnung
 	*/
-	virtual QString description() const;
+	virtual QString description() const = 0;
 
 	/**
 		\brief	Gibt die aktuelle Version des Plugins zurück
 		\return	Versionstext des Plugins
 	*/
-	virtual QString version() const;
+	virtual QString version() const = 0;
 
 	/**
 		\brief	Gibt den Autor des Plugins zurück
 		\return	Autor des Plugins
 	*/
-	virtual QString author() const;
+	virtual QString author() const = 0;
 
 	/**
 		\brief	Gibt das Datum des Plugins zurück
 		\return	Datum des Plugins
 	*/
-	virtual QString date() const;
+	virtual QString date() const = 0;
 
 	/**
 		\brief	Gibt den Schriftart-Typ zurück
@@ -214,7 +214,7 @@ public:
 		\param[in]	bPlural
 		\return	Name des Schriftart-Typs
 	*/
-	QString fontTypeName(bool bPlural = true) const;
+//park	QString fontTypeName(bool bPlural = true) const;
 
 	/**
 		\brief	Gibt den Name des Schriftart-Typs \a fontType zurück
@@ -222,21 +222,21 @@ public:
 		\param[in]	bPlural
 		\return	Name des Schriftart-Typs
 	*/
-	static const QString fontTypeName(LengthCalculationInterface::FontTypeE fontType, bool bPlural = true);
+//park	static const QString fontTypeName(LengthCalculationInterface::FontTypeE fontType, bool bPlural = true);
 
 	/**
 		\brief	Prüft, ob die Längenberechnung das Standardverfahren darstellt
 		\retval true	Längenberechnung stellt das Standardverfahren dar
 		\retval false	Längenberechnung stellt nicht das Standardverfahren dar
 	*/
-	bool isStandard() const;
+//park	bool isStandard() const;
 
 	/**
 		\brief	Gibt die Id zu dem Schriftart-Typ \a fontType zurück, die die Standard-Längenberechnung identifiziert
 		\param[in]	fontType	Schriftart-Typ
 		\return	Id, die die Standard-Längenberechnung identifiziert
 	*/
-	static const QUuid& standardId(LengthCalculationInterface::FontTypeE fontType);
+//park	static const QUuid& standardId(LengthCalculationInterface::FontTypeE fontType);
 
 	/**@}*/
 
@@ -255,7 +255,7 @@ public:
 	 *
 	 * \sa fontDirectoryPath().
 	 */
-	void setFontDirectoryPath(const QString& strFontDirectoryPath);
+//park	void setFontDirectoryPath(const QString& strFontDirectoryPath);
 
 	/**
 	 * Der Pfad zum Verzeichnis für (zusätzliche) Schriftartdateien.
@@ -268,14 +268,14 @@ public:
 	 *
 	 * \sa setFontDirectoryPath().
 	 */
-	const QString& fontDirectoryPath() const;
+//park	const QString& fontDirectoryPath() const;
 
 	/**
 	 * Ist der aktuelle Verzeichnispfad fontDirectoryPath() gültig?.
 	 * Ist der Pfad ungültig, steht in \a strError der Grund.
 	 * Ist der Pfad leer wird 'false' zurückgegeben.
 	 */
-	bool hasValidFontDirectoryPath(QString* strError = 0) const;
+//park	bool hasValidFontDirectoryPath(QString* strError = 0) const;
 
 	/**
 	 * Schriftartdateien aus dem Datenverzeichnis auslesen.
@@ -295,7 +295,7 @@ public:
 	 * benutzen, um die Schriftartdateien aus dem Schriftartverzeichnis
 	 * auszulesen.
 	 */
-	virtual const QStringList fetchFontFiles() const = 0;
+//park	virtual const QStringList fetchFontFiles() const = 0;
 
 	//@}
 
@@ -358,7 +358,7 @@ public:
 	 * der Methoden canResolveChar() und calculateWidth() befüllt.
 	 * \sa canResolveChar(), calculateWidth().
 	 */
-	virtual QList<ushort> unresolvedChars(const QString& strFontName) const;
+//park	virtual QList<ushort> unresolvedChars(const QString& strFontName) const;
 
 	/**
 	 * Liefert alle fehlerhaften Kerningeintäge der Schriftart \a strFontName zurück.
@@ -366,7 +366,7 @@ public:
 	 * dass die übergebene Schriftart \a strFontName keine Kerning-Fehler enthält.
 	 * \attention Diese Methode ist speziell für Bitmapschriftarten von Bedeutung!
 	 */
-	virtual QStringList kerningErrors(const QString& strFontName) const;
+//park	virtual QStringList kerningErrors(const QString& strFontName) const;
 
 	//@}
 
@@ -425,7 +425,7 @@ public:
 	 * die Methode addFont() überschrieben werden.
 	 * \sa addFont().
 	 */
-	virtual bool canAddFont() const;
+//park	virtual bool canAddFont() const;
 
 	/**
 	 * Fügt die Quelldatei für die Schriftart \a strFontName hinzu.
@@ -441,8 +441,8 @@ public:
 	 *
 	 * \sa canAddFont().
 	 */
-	virtual bool addFont(const QString& strFontName,
-						 QString* strError = 0);
+//park	virtual bool addFont(const QString& strFontName,
+//						 QString* strError = 0);
 
 
 	/**
@@ -452,7 +452,7 @@ public:
 	 * die Methode replaceFont() überschrieben werden.
 	 * \sa replaceFont().
 	 */
-	virtual bool canReplaceFont() const;
+//park	virtual bool canReplaceFont() const;
 
 	/**
 	 * Tauscht die Quelldatei der Schriftart \a strFontName aus.
@@ -469,8 +469,8 @@ public:
 	 *
 	 * \sa canReplaceFont().
 	 */
-	virtual bool replaceFont(const QString& strFontName,
-							 QString* strError = 0);
+//park	virtual bool replaceFont(const QString& strFontName,
+//							 QString* strError = 0);
 
 	/**
 	 * Kann die Quelle für eine Schriftart neu geladen werden?.
@@ -479,7 +479,7 @@ public:
 	 * die Methode refreshFont() überschrieben werden.
 	 * \sa refreshFont().
 	 */
-	virtual bool canRefreshFont() const;
+//park	virtual bool canRefreshFont() const;
 
 	/**
 	 * Aktualisiert die Schriftart \a strFontName.
@@ -488,8 +488,8 @@ public:
 	 * und gibt false zurück.
 	 * \sa canRefreshFont().
 	 */
-	virtual bool refreshFont(const QString& strFontName,
-							 QString* strError = 0);
+//park	virtual bool refreshFont(const QString& strFontName,
+//park							 QString* strError = 0);
 
 	//@}
 
@@ -504,13 +504,13 @@ public:
 	 * Hintergrund: Über den Loader kann das Plugin wieder
 	 * korrekt entladen werden.
 	 */
-	void setPluginLoader(QPluginLoader* plugLoader);
+//park	void setPluginLoader(QPluginLoader* plugLoader);
 
 	/// Der Lader, der dieses Plugin geladen hat.
-	QPluginLoader* pluginLoader() const;
+//park	QPluginLoader* pluginLoader() const;
 
 	/// Kann das Plugin entladen / gelöscht werden?.
-	bool canUnloadPlugin() const;
+//park	bool canUnloadPlugin() const;
 
 	//@}
 
@@ -525,8 +525,8 @@ public:
 	 * Die Meldung wird mit dem !-Zeichen abgeschlossen.
 	 * Die fehlenden Parameter werden in \a param übergeben.
 	 */
-	static QString errorMessage(ErrorE	     error,
-								QStringList param);
+//park	static QString errorMessage(ErrorE	     error,
+//								QStringList param);
 
 	//@}
 
@@ -538,22 +538,22 @@ protected:
 	 * Ggf. können die Dateien über den Filter \a lNameFilters
 	 * gefiltert werden.
 	 */
-	const QStringList _fetchDataFiles(const QStringList* lNameFilters	   = 0,
+/*park	const QStringList _fetchDataFiles(const QStringList* lNameFilters	   = 0,
 									  const QString& 	strPath		   = QString::null,
-									  bool		  addDirectoryPath = true) const;
+									  bool		  addDirectoryPath = true) const;*/
 
 	/**
 	 * Eine Datei für die Schriftart \a strFontName über einen Dialog auswählen.
 	 * Ggf. können die Dateien über den Filter \a lNameFilters
 	 * gefiltert werden.
 	 */
-	const QString _selectExistingFile(const QString&     strFontName,
-									  const QStringList* lNameFilter) const;
+/*park	const QString _selectExistingFile(const QString&     strFontName,
+									  const QStringList* lNameFilter) const;*/
 
 	/**
 	 * Ein Verzeichnis für die Schriftart \a strFontName über einen Dialog auswählen.
 	 */
-	const QString _selectExistingDir(const QString& strFontName) const;
+/*park	const QString _selectExistingDir(const QString& strFontName) const;
 
 
 private:
@@ -563,7 +563,7 @@ private:
 	QString			m_fontDirectoryPath;
 
 	static QUuid m_uuid;
-	static QUuid m_uuidBitmap;
+	static QUuid m_uuidBitmap;*/
 };
 
 

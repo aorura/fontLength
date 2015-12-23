@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="9,00"
 	Name="basiceffectsplugin"
-	ProjectGUID="{B84DE517-3415-3E3C-8125-5D926168B6BE}"
+	ProjectGUID="{90C6F749-134B-3FC7-B75D-98179F5768DF}"
 	Keyword="Qt4VSv1.0">
 	<Platforms>
 		<Platform
@@ -19,7 +19,7 @@
 			UseOfMfc="0">
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="&quot;c:\Qt\4.8.7\include\QtCore&quot;,&quot;c:\Qt\4.8.7\include\QtGui&quot;,&quot;c:\Qt\4.8.7\include&quot;,&quot;c:\Qt\4.8.7\include\ActiveQt&quot;,&quot;debug&quot;,c:\Qt\4.8.7\mkspecs\win32-msvc2008"
+				AdditionalIncludeDirectories="&quot;c:\Qt\4.8.6\include\QtCore&quot;,&quot;c:\Qt\4.8.6\include\QtGui&quot;,&quot;c:\Qt\4.8.6\include&quot;,&quot;c:\Qt\4.8.6\include\ActiveQt&quot;,&quot;debug&quot;,c:\Qt\4.8.6\mkspecs\win32-msvc2008"
 				AdditionalOptions="-Zm200 -w34100 -w34189"
 				AssemblerListingLocation="debug\"
 				DebugInformationFormat="3"
@@ -38,8 +38,8 @@
 				Name="VCCustomBuildTool" />
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="c:\Qt\4.8.7\lib\QtGuid4.lib c:\Qt\4.8.7\lib\QtCored4.lib"
-				AdditionalLibraryDirectories="c:\Qt\4.8.7\lib"
+				AdditionalDependencies="c:\Qt\4.8.6\lib\QtGuid4.lib c:\Qt\4.8.6\lib\QtCored4.lib"
+				AdditionalLibraryDirectories="c:\Qt\4.8.6\lib"
 				GenerateDebugInformation="true"
 				IgnoreImportLibrary="true"
 				LinkTimeCodeGeneration="0"
@@ -71,7 +71,7 @@
 			UseOfMfc="0">
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="&quot;c:\Qt\4.8.7\include\QtCore&quot;,&quot;c:\Qt\4.8.7\include\QtGui&quot;,&quot;c:\Qt\4.8.7\include&quot;,&quot;c:\Qt\4.8.7\include\ActiveQt&quot;,&quot;release&quot;,c:\Qt\4.8.7\mkspecs\win32-msvc2008"
+				AdditionalIncludeDirectories="&quot;c:\Qt\4.8.6\include\QtCore&quot;,&quot;c:\Qt\4.8.6\include\QtGui&quot;,&quot;c:\Qt\4.8.6\include&quot;,&quot;c:\Qt\4.8.6\include\ActiveQt&quot;,&quot;release&quot;,c:\Qt\4.8.6\mkspecs\win32-msvc2008"
 				AdditionalOptions="-Zm200 -w34100 -w34189"
 				AssemblerListingLocation="release\"
 				DebugInformationFormat="0"
@@ -90,8 +90,8 @@
 				Name="VCCustomBuildTool" />
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="c:\Qt\4.8.7\lib\QtGui4.lib c:\Qt\4.8.7\lib\QtCore4.lib"
-				AdditionalLibraryDirectories="c:\Qt\4.8.7\lib"
+				AdditionalDependencies="c:\Qt\4.8.6\lib\QtGui4.lib c:\Qt\4.8.6\lib\QtCore4.lib"
+				AdditionalLibraryDirectories="c:\Qt\4.8.6\lib"
 				GenerateDebugInformation="false"
 				IgnoreImportLibrary="true"
 				LinkIncremental="1"
@@ -134,21 +134,21 @@
 					Name="Debug|Win32">
 					<Tool
 						Name="VCCustomBuildTool"
-						AdditionalDependencies="C:\Qt\4.8.7\bin\moc.exe;basiceffectsplugin.h"
-						CommandLine="C:\Qt\4.8.7\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_PLUGIN -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;c:\Qt\4.8.7\include\QtCore&quot; -I&quot;c:\Qt\4.8.7\include\QtGui&quot; -I&quot;c:\Qt\4.8.7\include&quot; -I&quot;c:\Qt\4.8.7\include\ActiveQt&quot; -I&quot;debug&quot; -Ic:\Qt\4.8.7\mkspecs\win32-msvc2008 -D_MSC_VER=1500 -DWIN32 basiceffectsplugin.h -o debug\moc_basiceffectsplugin.cpp"
+						AdditionalDependencies="C:\Qt\4.8.6\bin\moc.exe;basiceffectsplugin.h"
+						CommandLine="C:\Qt\4.8.6\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_PLUGIN -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;c:\Qt\4.8.6\include\QtCore&quot; -I&quot;c:\Qt\4.8.6\include\QtGui&quot; -I&quot;c:\Qt\4.8.6\include&quot; -I&quot;c:\Qt\4.8.6\include\ActiveQt&quot; -I&quot;debug&quot; -Ic:\Qt\4.8.6\mkspecs\win32-msvc2008 -D_MSC_VER=1500 -DWIN32 basiceffectsplugin.h -o debug\moc_basiceffectsplugin.cpp"
 						Description="MOC basiceffectsplugin.h"
 						Outputs="debug\moc_basiceffectsplugin.cpp"
-						Path="c:\Qt\4.8.7\bin" />
+						Path="c:\Qt\4.8.6\bin" />
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Release|Win32">
 					<Tool
 						Name="VCCustomBuildTool"
-						AdditionalDependencies="C:\Qt\4.8.7\bin\moc.exe;basiceffectsplugin.h"
-						CommandLine="C:\Qt\4.8.7\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_PLUGIN -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;c:\Qt\4.8.7\include\QtCore&quot; -I&quot;c:\Qt\4.8.7\include\QtGui&quot; -I&quot;c:\Qt\4.8.7\include&quot; -I&quot;c:\Qt\4.8.7\include\ActiveQt&quot; -I&quot;release&quot; -Ic:\Qt\4.8.7\mkspecs\win32-msvc2008 -D_MSC_VER=1500 -DWIN32 basiceffectsplugin.h -o release\moc_basiceffectsplugin.cpp"
+						AdditionalDependencies="C:\Qt\4.8.6\bin\moc.exe;basiceffectsplugin.h"
+						CommandLine="C:\Qt\4.8.6\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_PLUGIN -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;c:\Qt\4.8.6\include\QtCore&quot; -I&quot;c:\Qt\4.8.6\include\QtGui&quot; -I&quot;c:\Qt\4.8.6\include&quot; -I&quot;c:\Qt\4.8.6\include\ActiveQt&quot; -I&quot;release&quot; -Ic:\Qt\4.8.6\mkspecs\win32-msvc2008 -D_MSC_VER=1500 -DWIN32 basiceffectsplugin.h -o release\moc_basiceffectsplugin.cpp"
 						Description="MOC basiceffectsplugin.h"
 						Outputs="release\moc_basiceffectsplugin.cpp"
-						Path="c:\Qt\4.8.7\bin" />
+						Path="c:\Qt\4.8.6\bin" />
 				</FileConfiguration>
 			</File>
 			<File
