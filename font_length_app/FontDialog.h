@@ -16,6 +16,9 @@ class FontDialog : public QDialog, public Ui::FontDialog
 public:
 	FontDialog(QWidget *parent  = 0);
 
+public slots:
+	void showFontWidth();
+
 private:
 	static QDir directoryOf(const QString &subdir);
 	void loadPlugins();

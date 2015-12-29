@@ -2,15 +2,23 @@
 #define LENGTHCALCULATIONDUMMY8_H
 
 #include <QObject>
-
 #include "../font_length_app/LengthCalculationInterface.h"
+
 
 class LengthCalculationDummy8 : public QObject, public LengthCalculationInterface
 {
     Q_OBJECT
     Q_INTERFACES(LengthCalculationInterface)
+protected:
+	const static int FONTS_CNT = 9;
+	const static int ASCII_CNT = 196;
+	int fontDB[FONTS_CNT][ASCII_CNT];
+
+	int getFontLength(QString const &str, QString const &fontName);
+	int getNumberFromQString(const QString &xString);
 
 public:
+	LengthCalculationDummy8();
     /** 
      * \name Attribute: 
      */ 
@@ -107,6 +115,8 @@ public:
                                 unsigned int  *iResultCode = 0 );
 
     //@}
+
+	
 };
 
 

@@ -4,7 +4,6 @@
 	Version="9.00"
 	Name="font_length_app"
 	ProjectGUID="{D3ED7121-66F0-385F-B8B5-7117BDEF9947}"
-	RootNamespace="font_length_app"
 	Keyword="Qt4VSv1.0"
 	TargetFrameworkVersion="0"
 	>

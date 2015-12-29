@@ -5,6 +5,7 @@
 #include "stdafx.h"
 #include "GPFontWidth.h"
 #include "GPFontWidthDlg.h"
+#include <fstream>
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -244,8 +245,51 @@ wchar_t *replaceAll(wchar_t *s, const wchar_t *olds, const wchar_t *news)
 	return result;
 }
 
+
+
 void CGPFontWidthDlg::OnBnClickedAnalysis()
 {
+	// park
+	// load ascii character.
+	const int listSize = 99;
+	wchar_t ascii[listSize] = {L'\t', L'\n', L'\r',  };
+
+	for (int i=3; i < listSize; ++i) {
+		ascii[i] = 29 + i;
+	}
+
+	ascii[listSize-1] = L'\0';
+	
+	OutputDebugStringW(ascii);
+
+	ofstream myfile;
+	myfile.open("fontPixel.txt");
+	wchar_t alpha[2] = {L'\0', L'\0'}; 
+
+	for(int i=1; i  <= CLGFontFreeType::getFontCount(); i++) {
+		m_pSK.setFontSizeLanguage(i);
+		myfile << "{";// << i << ",";
+		for (int j=0; ascii[j] != '\0'; ++j) {
+			alpha[0]  = ascii[j];
+			int fontPixel = m_pSK.getWidth(alpha,  0);
+			myfile << ascii[j] << "," << fontPixel;
+			if (ascii[j+1] != '\0') {
+				myfile << ",";
+			}
+		}
+
+		if (i+1 <= CLGFontFreeType::getFontCount()) {
+			myfile << "}," << endl;
+		} else {
+			myfile << "}" << endl;
+		}
+	}
+
+	myfile.close();
+	OutputDebugStringW(L"out");
+
+	// end park
+
 	if ( m_bSK == lgFALSE )
 	{
 		MessageBox(L"Font Loaded Fail !");

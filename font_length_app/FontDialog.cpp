@@ -9,9 +9,28 @@ FontDialog::FontDialog(QWidget *parent) : QDialog(parent)
 
 	loadPlugins();
 
-	//connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+	connect(pushButton, SIGNAL(clicked()), this, SLOT(showFontWidth()));
 
-	lineEdit->setText(interfaces[0]->author());
+	comboBox->addItem("Skoda");
+
+	QStringList fonts = interfaces[0]->availableFonts();
+
+	foreach (QString fontName, fonts) {
+		comboBox_2->addItem(fontName);
+	}
+}
+
+void FontDialog::showFontWidth()
+{
+	// Only use an fontType and text to calculate the width of an font.
+	QString fontType = comboBox_2->currentText();
+	QString text = plainTextEdit->toPlainText();
+	unsigned int result;	// not used.
+	LengthCalculationInterface::CalculateFontShowMessagesE e;	// not used.
+
+	int totalWidth = interfaces[0]->calculateWidth(text, fontType, 1,false,false,e,&result);
+	PixcelOfFont->setText(QString::number(totalWidth));
+	qDebug() << "totalWidth: " << totalWidth << endl;
 }
 
 void FontDialog::loadPlugins()

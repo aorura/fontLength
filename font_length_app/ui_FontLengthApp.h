@@ -13,7 +13,6 @@
 #include <QtGui/QAction>
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
-#include <QtGui/QCheckBox>
 #include <QtGui/QComboBox>
 #include <QtGui/QGroupBox>
 #include <QtGui/QHBoxLayout>
@@ -38,20 +37,19 @@ public:
     QComboBox *comboBox_2;
     QGroupBox *groupBox_2;
     QPlainTextEdit *plainTextEdit;
-    QCheckBox *checkBox;
     QPushButton *pushButton;
     QGroupBox *groupBox_3;
-    QWidget *widget;
+    QWidget *layoutWidget1;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_3;
-    QLineEdit *lineEdit;
+    QLineEdit *PixcelOfFont;
     QLabel *label_5;
 
     void setupUi(QWidget *FontDialog)
     {
         if (FontDialog->objectName().isEmpty())
             FontDialog->setObjectName(QString::fromUtf8("FontDialog"));
-        FontDialog->resize(356, 506);
+        FontDialog->resize(356, 452);
         groupBox = new QGroupBox(FontDialog);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
         groupBox->setGeometry(QRect(30, 30, 304, 82));
@@ -83,36 +81,34 @@ public:
 
         groupBox_2 = new QGroupBox(FontDialog);
         groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
-        groupBox_2->setGeometry(QRect(30, 140, 301, 171));
+        groupBox_2->setGeometry(QRect(30, 140, 301, 131));
         plainTextEdit = new QPlainTextEdit(groupBox_2);
         plainTextEdit->setObjectName(QString::fromUtf8("plainTextEdit"));
         plainTextEdit->setGeometry(QRect(20, 30, 261, 71));
-        checkBox = new QCheckBox(groupBox_2);
-        checkBox->setObjectName(QString::fromUtf8("checkBox"));
-        checkBox->setGeometry(QRect(200, 120, 81, 21));
         pushButton = new QPushButton(FontDialog);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(140, 440, 75, 23));
+        pushButton->setGeometry(QRect(130, 400, 75, 23));
         groupBox_3 = new QGroupBox(FontDialog);
         groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
-        groupBox_3->setGeometry(QRect(100, 330, 181, 81));
-        widget = new QWidget(groupBox_3);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(20, 40, 143, 22));
-        horizontalLayout_2 = new QHBoxLayout(widget);
+        groupBox_3->setGeometry(QRect(80, 280, 183, 102));
+        layoutWidget1 = new QWidget(groupBox_3);
+        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(20, 40, 143, 22));
+        horizontalLayout_2 = new QHBoxLayout(layoutWidget1);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        label_3 = new QLabel(widget);
+        label_3 = new QLabel(layoutWidget1);
         label_3->setObjectName(QString::fromUtf8("label_3"));
 
         horizontalLayout_2->addWidget(label_3);
 
-        lineEdit = new QLineEdit(widget);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        PixcelOfFont = new QLineEdit(layoutWidget1);
+        PixcelOfFont->setObjectName(QString::fromUtf8("PixcelOfFont"));
+        PixcelOfFont->setReadOnly(true);
 
-        horizontalLayout_2->addWidget(lineEdit);
+        horizontalLayout_2->addWidget(PixcelOfFont);
 
-        label_5 = new QLabel(widget);
+        label_5 = new QLabel(layoutWidget1);
         label_5->setObjectName(QString::fromUtf8("label_5"));
 
         horizontalLayout_2->addWidget(label_5);
@@ -138,7 +134,6 @@ public:
         label->setText(QApplication::translate("FontDialog", "Model", 0, QApplication::UnicodeUTF8));
         label_2->setText(QApplication::translate("FontDialog", "Font Type", 0, QApplication::UnicodeUTF8));
         groupBox_2->setTitle(QApplication::translate("FontDialog", "Input String", 0, QApplication::UnicodeUTF8));
-        checkBox->setText(QApplication::translate("FontDialog", "Ignore CRLF", 0, QApplication::UnicodeUTF8));
         pushButton->setText(QApplication::translate("FontDialog", "Analysis", 0, QApplication::UnicodeUTF8));
         groupBox_3->setTitle(QApplication::translate("FontDialog", "Font Information", 0, QApplication::UnicodeUTF8));
         label_3->setText(QApplication::translate("FontDialog", "Font Width:", 0, QApplication::UnicodeUTF8));

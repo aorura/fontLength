@@ -69,7 +69,7 @@ void *LengthCalculationDummy8::qt_metacast(const char *_clname)
         return static_cast<void*>(const_cast< LengthCalculationDummy8*>(this));
     if (!strcmp(_clname, "LengthCalculationInterface"))
         return static_cast< LengthCalculationInterface*>(const_cast< LengthCalculationDummy8*>(this));
-    if (!strcmp(_clname, "vw.eefh.HMI-Linguist.LengthCalculationInterface/2.0"))
+    if (!strcmp(_clname, "vw.eefh.HMI-LG-GP.LengthCalculationInterface/2.0"))
         return static_cast< LengthCalculationInterface*>(const_cast< LengthCalculationDummy8*>(this));
     return QObject::qt_metacast(_clname);
 }

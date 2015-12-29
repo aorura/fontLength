@@ -329,6 +329,11 @@ public:
 
 	//@}
 
+	 /**
+     * Read files from the file directory.
+     */
+    virtual const QStringList fetchFontFiles() const = 0 ;
+
 
 	/**
 	 * \name Zeichenauflösung:
@@ -573,7 +578,7 @@ private:
 // Durch eine Aenderung des Strings werden alle Plugins, die sich
 // im Umlauf befinden automatisch ungueltig und koennen nicht mehr
 // geladen werden!
-Q_DECLARE_INTERFACE(LengthCalculationInterface, "vw.eefh.HMI-Linguist.LengthCalculationInterface/2.0")
+Q_DECLARE_INTERFACE(LengthCalculationInterface, "vw.eefh.HMI-LG-GP.LengthCalculationInterface/2.0")
 
 #endif // LENGTHCALCULATIONINTERFACE_H
 
